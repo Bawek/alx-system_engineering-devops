@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Kill infinity
+# terminate infinite processes
+if[ -n "$ig" ]
+then
+  kill -ls "$id"
+fi

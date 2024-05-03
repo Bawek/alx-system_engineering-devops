@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# you can  not use grip
+# shellcheck disable=SC2009
+./1-list_your_processes | grep "bash"
