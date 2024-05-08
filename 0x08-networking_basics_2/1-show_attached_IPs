@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script displays all active IPv4 IPs on the machine
+
+# Extract IPv4 addresses from /proc/net files
+ip_addresses=$(awk '$1 == "inet" && $4 != "127.0.0.1" {print $2}' /proc/net/fib_trie /proc/net/tcp /proc/net/tcp6 /proc/net/udp /proc/net/udp6 | sort -u)
+
+# Loop through each IP address and display them
+for ip in $ip_addresses; do
+    echo "$ip"
+done
+
