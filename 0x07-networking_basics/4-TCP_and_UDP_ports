@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#!/bin/bash
+
+# Display active internet connections
+echo "Active Internet connections (only servers)"
+echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
+lsof -i -P -n | grep LISTEN
+
+# Display active UNIX domain sockets
+echo "Active UNIX domain sockets (only servers)"
+echo "Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path"
+lsof -U | grep LISTEN
+
